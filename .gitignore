@@ -1,0 +1,12 @@
+#vendor/
+build/bin/
+
+# travis
+profile.tmp
+profile.cov
+
+# IdeaIDE
+.idea
+
+# VS Code
+.vscode
