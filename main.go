@@ -19,7 +19,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"time"
+	"log"
+	"net/http"
 
 	"github.com/shirou/gopsutil/cpu"
 )
@@ -41,13 +42,12 @@ type InfoCPU struct {
 	InfoStat    []InfoStat
 }
 
-func printCPUInfo() {
-
-	cpus, _ := cpu.Counts(true)
+func printCPUInfo(w http.ResponseWriter, r *http.Request) {
+	cpuNo, _ := cpu.Counts(true)
 	info, _ := cpu.Info()
 
 	infoCPU := &InfoCPU{
-		PhysicalCPU: cpus,
+		PhysicalCPU: cpuNo,
 	}
 
 	infoStat := make([]InfoStat, 0)
@@ -65,19 +65,11 @@ func printCPUInfo() {
 	}
 	infoCPU.InfoStat = infoStat
 	b, _ := json.Marshal(infoCPU)
-	fmt.Print(string(b))
+	fmt.Fprintf(w, string(b))
 }
 
 func main() {
-	ticker := time.NewTicker(5 * time.Second)
-	quit := make(chan struct{})
-	for {
-		select {
-		case <-ticker.C:
-			printCPUInfo()
-		case <-quit:
-			ticker.Stop()
-			return
-		}
-	}
+	http.HandleFunc("/", printCPUInfo)
+	fmt.Println("HIIIIIIIIIIIII")
+	log.Fatal(http.ListenAndServe(":3000", nil))
 }
