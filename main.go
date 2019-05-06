@@ -1,18 +1,18 @@
-// Copyright 2019 The crowdcompute:cc-go-sdk Authors
-// This file is part of the crowdcompute:cc-go-sdk library.
+// Copyright 2019 The crowdcompute:machine-stats-app Authors
+// This file is part of the crowdcompute:machine-stats-app library.
 //
-// The crowdcompute:cc-go-sdk library is free software: you can redistribute it and/or modify
+// The crowdcompute:machine-stats-app library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The crowdcompute:cc-go-sdk library is distributed in the hope that it will be useful,
+// The crowdcompute:machine-stats-app library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the crowdcompute:cc-go-sdk library. If not, see <http://www.gnu.org/licenses/>.
+// along with the crowdcompute:machine-stats-app library. If not, see <http://www.gnu.org/licenses/>.
 
 package main
 
